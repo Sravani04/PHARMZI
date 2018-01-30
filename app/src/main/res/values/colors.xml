@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="boxcolor">#33435D</color>
+    <color name="languagecolor">#0EC0B8</color>
+    <color name="text_color">#373737</color>
+    <color name="darkgrey">#A9A9A9</color>
+    <color name="grey">#808080</color>
+    <color name="colorActionBackground">#e5e3d6</color>
+    <color name="white">#ffffff</color>
+    <color name="textcolor">#aa000000</color>
+    <color name="green">#32CD32</color>
+    <color name="background">#80000000</color>
+    <color name="transparent">#64424242</color>
+    <color name="black">#000000</color>
+    <drawable name="focused">#ff5500</drawable>
+    <drawable name="selected">#FF00FF</drawable>
+    <color name="red">#FF0000</color>
+</resources>

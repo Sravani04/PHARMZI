@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/offer"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/languagecolor"
+        android:orientation="vertical"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/filter_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/filter_image"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:padding="6dp"
+                    android:src="@drawable/filters" />
+
+                <TextView
+                    android:id="@+id/filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Filter"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#d2d2d2"
+                android:gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:id="@+id/pharma_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Pharmcies"
+                android:textColor="#000"/>
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#d2d2d2"
+                android:gravity="center_vertical|center_horizontal" />
+
+            <LinearLayout
+                android:id="@+id/search_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/search_image"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:padding="6dp"
+                    android:src="@drawable/search" />
+
+                <TextView
+                    android:id="@+id/search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Search"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d2d2d2"
+        android:orientation="vertical"></LinearLayout>
+
+
+    <TextView
+        android:id="@+id/phar_count"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="599 Open Pharmcies"
+        android:textColor="#000000" />
+
+
+    <LinearLayout
+        android:id="@+id/search_pop"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:src="@drawable/search" />
+
+
+        <EditText
+            android:id="@+id/search_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Search Pharmcies"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/search_text"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/languagecolor"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Search"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ViewFlipper
+                android:id="@+id/filter_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ListView
+                    android:id="@+id/pharmacies_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="7dp"
+                    android:divider="@null" />
+
+
+            </ViewFlipper>
+        </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/filter_popup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:background="@color/background"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:paddingBottom="2dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/popup_blue_rounded_corners"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="10dp">
+
+                        <ImageView
+                            android:id="@+id/close_btn"
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:src="@drawable/close" />
+
+                        <TextView
+                            android:id="@+id/textView63"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Filter" />
+
+                        <TextView
+                            android:id="@+id/apply_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apply"
+                            android:textColor="#00aabb" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#d2d2d2"
+                        android:orientation="vertical" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="1dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingRight="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Sorted by title"
+                                android:textColor="#373737"
+                                android:textSize="16sp" />
+
+                            <LinearLayout
+                                android:id="@+id/title_btn"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/border_box"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/title_option"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="10dp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView2"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:padding="8dp"
+                                    android:src="@drawable/down_arrow" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="#DEDCDE"
+                            android:orientation="vertical"></LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="1dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingRight="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Sorted by Newest"
+                                android:textColor="#373737"
+                                android:textSize="16sp" />
+
+                            <LinearLayout
+                                android:id="@+id/newest_btn"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/border_box"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/newest_option"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="10dp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView4"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:padding="8dp"
+                                    android:src="@drawable/down_arrow" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="#DEDCDE"
+                            android:orientation="vertical"></LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="1dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingRight="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dp"
+                                android:text="Sorted by Price"
+                                android:textColor="#373737"
+                                android:textSize="16sp" />
+
+                            <LinearLayout
+                                android:id="@+id/distance_btn"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/border_box"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/distance_option"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="10dp" />
+
+                                <ImageView
+                                    android:id="@+id/imageView35"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:padding="8dp"
+                                    android:src="@drawable/down_arrow" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
